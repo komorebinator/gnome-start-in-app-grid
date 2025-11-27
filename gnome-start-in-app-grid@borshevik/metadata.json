@@ -1,6 +1,6 @@
 {
-    "uuid": "start-in-app-grid@borshevik",
-    "name": "Start in App Grid",
+    "uuid": "gnome-start-in-app-grid@borshevik",
+    "name": "Start GNOME in App Grid",
     "description": "Automatically show the applications grid once after GNOME Shell startup.",
     "version": 1,
     "shell-version": [
