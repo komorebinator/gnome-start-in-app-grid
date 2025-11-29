@@ -6,8 +6,8 @@ let ranOnce = false;
 export default class StartInAppGridExtension extends Extension {
     enable() {
         if (ranOnce) return;
+        Main.overview.hide();
         Main.overview.showApps();
         ranOnce = true;
-        log("Show app grid");
     }
 }
