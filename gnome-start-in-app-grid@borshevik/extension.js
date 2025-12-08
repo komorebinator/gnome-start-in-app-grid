@@ -1,4 +1,5 @@
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
+import GLib from "gi://GLib";
 import { Extension } from "resource:///org/gnome/shell/extensions/extension.js";
 
 let ranOnce = false;
@@ -8,7 +9,10 @@ export default class StartInAppGridExtension extends Extension {
         if (ranOnce) return;
         log("Show apps");
         Main.overview.hide();
-        Main.overview.showApps();
+        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 310, () => {
+            Main.overview.showApps();
+            return GLib.SOURCE_REMOVE;
+        });
         ranOnce = true;
     }
     enable() {
